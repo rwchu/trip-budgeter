@@ -13,14 +13,14 @@ import java.util.Locale;
 
 class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.ViewHolder> {
 
-    private Date[] dates;
     private float[] prices;
-    private String[] purchasers;
+    private String[] buyers;
+    private String[] payers;
 
-    public PurchaseAdapter(Date[] dates, float[] prices, String[] purchasers) {
-        this.dates = dates;
+    public PurchaseAdapter(float[] prices, String[] buyers, String[] payers) {
         this.prices = prices;
-        this.purchasers = purchasers;
+        this.buyers = buyers;
+        this.payers = payers;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -41,9 +41,18 @@ class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         CardView cardView = holder.cardView;
 
-        DateFormat dateFormat = new SimpleDateFormat("EEE MMMMM dd, yyyy", Locale.CANADA);
+        /*DateFormat dateFormat = new SimpleDateFormat("EEE MMMMM dd, yyyy", Locale.CANADA);
         TextView dateView = (TextView) cardView.findViewById(R.id.date_text);
-        dateView.setText(dateFormat.format(dates[position]));
+        dateView.setText(dateFormat.format(dates[position]));*/
+
+        TextView priceView = (TextView) cardView.findViewById(R.id.price_text);
+        priceView.setText("$" + Float.toString(prices[position]));
+
+        TextView buyerView = (TextView) cardView.findViewById(R.id.buyer_text);
+        buyerView.setText(buyers[position]);
+
+        TextView payerView = (TextView) cardView.findViewById(R.id.payer_text);
+        payerView.setText(payers[position]);
 
     }
 

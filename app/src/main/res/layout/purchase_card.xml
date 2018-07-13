@@ -4,21 +4,23 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
+    android:layout_height="60dp"
     android:layout_margin="5dp"
-    card_view:cardCornerRadius="4dp" >
+    card_view:cardCornerRadius="5dp" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/date_text"
-            android:text="Tue July 22, 2018"
+            android:id="@+id/item_text"
+            android:text="Souvenir"
+            android:textStyle="bold"
             android:textColor="#000" />
 
         <TextView
@@ -32,24 +34,46 @@
             android:textSize="30sp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:id="@+id/description_text"
-            android:text="Souvenir"
-            android:layout_below="@+id/date_text"
-            android:textColor="#555"
-            android:textSize="12sp"/>
+            android:id="@+id/buyer_label_text"
+            android:text="Purchased by: "
+            android:textStyle="bold"
+            android:layout_below="@+id/item_text"
+            android:textColor="#000"
+            android:textSize="12sp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buyer_text"
+            android:text="Tim"
+            android:layout_toRightOf="@+id/buyer_label_text"
+            android:layout_below="@+id/item_text"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:id="@+id/buyer_text"
-            android:text="Purchased by: Tim"
-            android:layout_below="@+id/description_text"
-            android:textColor="#555"
-            android:textSize="12sp"/>
+            android:id="@+id/payer_label_text"
+            android:text="Split between: "
+            android:textStyle="bold"
+            android:layout_below="@+id/buyer_text"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/payer_text"
+            android:text="All"
+            android:layout_toRightOf="@+id/payer_label_text"
+            android:layout_below="@+id/buyer_label_text"
+            android:textColor="#000"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 
