@@ -7,6 +7,7 @@ public class Trip {
 
     private String name;
     private Date startDate, endDate;
+    private ArrayList<Purchase> purchases = new ArrayList<>();
     private ArrayList<Person> people = new ArrayList<>();
     private ArrayList<Float> balances = new ArrayList<>();
 
